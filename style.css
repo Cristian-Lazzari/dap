@@ -12,7 +12,9 @@ body{
     background-color: var(--main-color);
 
 }
-
+.panddinger{
+    padding-inline: 15px ;
+}
 h2{
     font-size: clamp(1.8rem, 7vw, 3.5rem);
     text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
@@ -25,7 +27,7 @@ h2{
 }
 
 .container{
-    padding-inline: 10px;
+
     max-width: 1100px;
     margin: 0 auto;
 }
@@ -142,6 +144,7 @@ header .bottom-h .triangle .logo-animate{
 .notions{
     display: flex;
     flex-direction: column;
+    gap: 130px;
 
 }
 .notions .notion{
@@ -343,6 +346,7 @@ header .bottom-h .triangle .logo-animate{
     
 }
 
+
 /*****CARD*****/
 .card-container{
     display: flex;
@@ -471,8 +475,8 @@ header .bottom-h .triangle .logo-animate{
 }
 .showroom .sec .circle{
     position: absolute;
-    top: 200px;
-    left: 200px;
+    top: 29%;
+    left: 15%;
     height: 20px;
     width: 20px;
     border-radius: 100%;
@@ -543,25 +547,36 @@ header .bottom-h .triangle .logo-animate{
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    text-align: left;
 }
 .soluzioni-su-misura .form .inputs{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     gap: 2rem;
+   
 }
 .soluzioni-su-misura .form .contact{
     display: flex;
 justify-content: space-between;
 }
+
 /******CONTATTACI*******/
 
 .contattaci{
     width: 100%;
     display: flex;
+    flex-direction: column;
     gap: 1rem;
     margin: 190px 0;
 }
+.contattaci .container-contattaci {
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+}
+
 
 .contattaci .sec{
     border: 3px solid white;
@@ -576,6 +591,7 @@ justify-content: space-between;
     text-transform: uppercase;
     font-size: clamp(1.7rem, 6vw, 2rem);
     font-family: Staatliches !important;
+    margin-bottom: 20px;
 }
 
 .contattaci .s1{
@@ -584,10 +600,18 @@ justify-content: space-between;
 }
 .contattaci .s1 .form{
     height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 15px;
     justify-content: space-between;
+}
+.contattaci .s1 .form .input-group {
+    width: 100% !important;
+}
+.contattaci .s1 .form .input-group input{
+    width: 100% !important;
 }
 .contattaci .s2, .s3{
     width: 100%;
@@ -595,6 +619,38 @@ justify-content: space-between;
 }
 .contattaci .s2{
     flex-direction: row !important;
+    justify-content: space-between;
+    gap: 1rem;
+}
+.contattaci .s2 .left-s2{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+}
+.contattaci .s2 .right{
+    align-self: flex-end;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.contattaci .s3{
+    display: flex;
+    flex-direction: row !important;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.contattaci .s3 h3{
+    width: 100%;
+}
+.contattaci .s3 .top-left{
+    width: calc((100% - 1rem) / 2);
+    padding: 10px;
+}
+.contattaci .s3 .top-right{
+    width: calc((100% - 1rem) / 2);
+    padding: 10px;
+
 }
 .contattaci .s3 img{
     width: 100%;
@@ -610,7 +666,9 @@ justify-content: space-between;
 
 
 
-
+textarea{
+    width: 100%;
+}
 /********FOOTER*********/
 footer{
     background-color: rgba(2, 39, 8, 0.836);
@@ -630,6 +688,8 @@ footer .top-f{
 }
 footer .top-f .logo{
     width: clamp(70px, 17%, 120px);
+    align-self: center;
+    aspect-ratio: 1 !important;
     border-radius: 100%;
 }
 footer .top-f section{
@@ -665,7 +725,7 @@ footer .bottom-f{
     flex-direction: column;
     gap: 3px;
 }
-footer h4{
+h4{
     text-transform: uppercase;
     font-size: clamp( 1.3rem, 2.6vh, 1.9rem);
     font-family: Staatliches !important;
@@ -678,7 +738,7 @@ footer h4{
    
    .input {
     min-width: 300px;
-    border: solid 1.5px #9e9e9e;
+    border: solid 1.5px #ffffffb5;
     border-radius: 1rem;
     background: none;
     padding: 1rem;
@@ -710,3 +770,41 @@ footer h4{
    .contattaci .input:focus ~ label, input:valid ~ label {
     background-color: #012B10 !important;
    }
+
+   @media (max-width:990px) {
+    .contattaci .container-contattaci {
+        flex-direction: column;
+    }
+    .contattaci .s1{
+        width: 100% !important;
+    }
+    .contattaci .s2{
+        flex-direction: column !important;
+        justify-content: flex-start;
+    }
+    .contattaci .left{
+        width: 100% !important;
+    }
+
+}
+   @media (max-width:570px) {
+    .n1:hover .bottom{
+        height: 550px !important;
+    }
+    .n2:hover .bottom{
+        height: 550px !important;
+    }
+    .n3:hover .bottom{
+        height: 550px !important;
+    }
+    .n4:hover .bottom{
+        height: 550px !important;
+    }
+    .n5:hover .bottom{
+        height: 550px !important;
+    }
+
+}
+label{
+    background: none!important;
+}
