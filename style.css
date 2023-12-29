@@ -32,6 +32,18 @@ h2{
     margin: 0 auto;
 }
 
+.btn{
+    align-self: center;
+    padding: 10px 40px;
+    background-color: white;
+    box-shadow: 5px 5px 15px black;
+    border-radius: 1000px;
+    color:  var(--main-color);
+    text-transform: uppercase;
+    font-family: Staatliches;   
+    font-weight: 400;
+    font-size: 25px;
+}
 
 header{
     background-image: url('./images/trees_jumbo.png');
@@ -633,6 +645,21 @@ justify-content: space-between;
     display: flex;
     flex-direction: column;
     gap: 15px;
+}
+.contattaci .s2 .right h4{
+    white-space: nowrap;
+
+}
+
+.contattaci .s2 .right .socials{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.contattaci .s2 .right .socials svg{
+    width: 30px;
+    height: 30px;
 }
 .contattaci .s3{
     display: flex;
