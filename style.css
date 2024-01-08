@@ -46,9 +46,9 @@ h2{
 }
 
 header{
-    background-image: url('./images/trees_jumbo.png');
+    background-image: url('https://didattica.abcompany.net/_nuxt/img/background.3e41fa9.jpg');
     background-size: cover;
-    background-position: -5px -50px;
+    background-position: center;
     padding-top: 20px;
     display: flex;
     gap: 2rem;
