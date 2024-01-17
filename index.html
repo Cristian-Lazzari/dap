@@ -186,15 +186,15 @@
                     <div class="inputs">
 
                         <div class="input-group">
-                            <input required="" type="text" name="text" autocomplete="off" class="input">
+                            <input id="name" required="" type="text" name="text" autocomplete="off" class="input">
                             <label class="user-label">Nome e cognome</label>
                         </div>
                         <div class="input-group">
-                            <input required="" type="text" name="text" autocomplete="off" class="input">
+                            <input id="telephone" required="" type="text" name="text" autocomplete="off" class="input">
                             <label class="user-label">Telefono</label>
                         </div>
                         <div class="input-group">
-                            <input required="" type="text" name="text" autocomplete="off" class="input">
+                            <input id="email" required="" type="text" name="text" autocomplete="off" class="input">
                             <label class="user-label">Email</label>
                         </div>
 
@@ -205,23 +205,23 @@
                         <span>Come preferisci essere contattato?</span> 
                         <div class="sub-contact">
                             <div>
-                                <input type="radio" name="contact" id="name">
+                                <input type="radio" value="mail" name="contact" id="contact">
                                 <label style="background-color: #ffffff00 !important; " for="name">email</label>
 
                             </div>
                             <div>
 
-                                <input type="radio" name="contact" id="tel">
+                                <input type="radio" value="telefono" name="contact" id="contact">
                                 <label style="background-color: #ffffff00 !important; " for="tel">telefono</label>
                             </div>
     
                         </div>
                     </div>
                     <div class="trattamenti">
-                        <input type="checkbox" name="trat" id="trat">
+                        <input type="checkbox" name="trat" id="tc">
                         <label style="background-color: #ffffff00 !important; font-size: 11px !important;" for="trat">Ho letto e accetto la politica sulla privacy ai sensi del Regolamento EU n. 679/2016</label>
                     </div>
-                    <div class="btn" id="btn1">Invia</div>
+                    <div class="btn" id="submit">Invia</div>
                 </div>
             </div>
 
@@ -407,6 +407,7 @@
         </div>
        
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.5/dist/axios.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

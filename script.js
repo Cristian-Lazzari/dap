@@ -122,3 +122,69 @@ eleNotion2.addEventListener('click', notionCollaps2)
 eleNotion3.addEventListener('click', notionCollaps3)
 eleNotion4.addEventListener('click', notionCollaps4)
 eleNotion5.addEventListener('click', notionCollaps5)
+
+
+// Get form values
+const email = document.getElementById('email');
+const name = document.getElementById('name');
+const telephone = document.getElementById('telephone');
+const contact = document.getElementsByName('contact');
+const sendMail = document.getElementById('tc');
+
+const submit = document.getElementById('submit');
+
+
+submit.addEventListener('click', function() {
+    inviaRichiesta(sendMail, email, name, telephone, contact);
+});
+
+function inviaRichiesta(sendMail, email, name, telephone, contact) {
+
+    if(sendMail.checked){
+
+        //Test - Dati da inviare al backend
+        const dati = {
+            email: email.value,
+            name: name.value,
+            telephone: telephone.value,
+            contact: contact[0].checked ? contact[0].value : contact[1].value,
+            sendMail:sendMail.checked ? true : false
+            
+            // Aggiungi altre chiavi e valori secondo necessitÃ 
+        };
+
+        // Esegui la richiesta POST utilizzando Axios
+        axios.post('http://mailer.future-plus.it/api/mail/createMail', dati, {
+            method: 'POST',    
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'X-Frontend': 'didatticaallaperto',
+            },
+            body: JSON.stringify(dati)
+            
+        })
+        .then(response => {
+            console.log(response.data);
+       
+        })
+        .catch(error => {
+            console.error('Errore Axios:', error);
+            console.error(error.response ? error.response.data.error : 'Errore sconosciuto'); 
+            
+            if (error.response && error.response.data.details) {
+              console.error('Dettagli dell\'errore:', error.response.data.details);
+            }
+            // Restituisci un messaggio di errore
+            return response('Errore interno del server', 500);
+        });
+
+    }else{
+       console.log('errore: devi spuntare la checkbox');
+    }
+    email.value= ' ' 
+    name.value= ' ' 
+    telephone.value= ' ' 
+ 
+
+}
