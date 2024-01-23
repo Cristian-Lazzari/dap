@@ -458,7 +458,7 @@ header .bottom-h .triangle .logo-animate{
 }
 .container section.pre-show p {
     text-align: center;
-    font-size: clamp(1.2rem, 2,8vw, 1.6rem);
+    font-size: clamp(1.2rem, 2.8vw, 1.6rem);
     text-align: center;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
     font-family: Tauri;
@@ -467,7 +467,10 @@ header .bottom-h .triangle .logo-animate{
 }
 
 
+p.p-special{
+    font-size: clamp(1.7rem, 3vw, 2.2rem) !important;
 
+}
 
 
 
