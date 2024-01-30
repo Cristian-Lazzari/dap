@@ -1,9 +1,3 @@
-const eleNotion = document.querySelector('.n1');
-const eleBottomNotion = document.querySelector('.bottom-1');
-const elePBottomNotion = document.querySelector('.p-n-1');
-const eleSpanBottomNotion = document.querySelector('.span-n-1');
-const eleImgBottomNotion = document.querySelector('.img-n-1');
-
 
 const eleNotion2 = document.querySelector('.n2');
 const eleBottomNotion2 = document.querySelector('.bottom-2');
@@ -36,21 +30,6 @@ const eleImgBottomNotion5 = document.querySelector('.img-n-5');
 
 
 
-
-function notionCollaps1 (){
-    if (!eleBottomNotion.classList.contains("bottom-on")){
-        eleBottomNotion.classList.add('bottom-on')
-        elePBottomNotion.classList.add('p-on')
-        eleSpanBottomNotion.classList.add('span-on')
-        eleImgBottomNotion.classList.add('img-on')
-    }else{
-        eleBottomNotion.classList.remove('bottom-on')
-        elePBottomNotion.classList.remove('p-on')
-        eleSpanBottomNotion.classList.remove('span-on')
-        eleImgBottomNotion.classList.remove('img-on')
-
-    }
-}
 
 
 
@@ -117,7 +96,7 @@ function notionCollaps5 (){
     }
 }
 
-eleNotion.addEventListener('click', notionCollaps1)
+
 eleNotion2.addEventListener('click', notionCollaps2)
 eleNotion3.addEventListener('click', notionCollaps3)
 eleNotion4.addEventListener('click', notionCollaps4)
