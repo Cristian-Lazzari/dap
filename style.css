@@ -436,13 +436,13 @@ header .bottom-h .triangle .logo-animate{
     font-size: 200%;
 }
 .card-container .card .title svg{
-    height: 17%;
+    height: 17%; 
     position: absolute;
     top: 30px;
     right: 0px;
 }
 .card-container .card p{
-    
+    font-size: clamp(1,2rem, 3vw, 1.7rem);
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.41);
     font-family: Tauri;
     
