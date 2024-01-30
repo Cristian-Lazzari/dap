@@ -419,10 +419,18 @@ header .bottom-h .triangle .logo-animate{
     text-align: left;
     align-self: flex-start;
 }
+.card-container .card .title span,
+.card-container .card .tt3{
+
+    font-size: clamp(3rem, 9vw, 3rem);
+    text-align: center;
+
+}
 .card-container .card .tt2{
     text-align: right;
     align-self: flex-end !important;
 }
+
 .card-container .card .title span{
     font-family: Staatliches !important;
     font-size: 200%;
