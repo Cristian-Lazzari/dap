@@ -133,7 +133,7 @@ function inviaRichiesta(sendMail, email, name, telephone, contact) {
         };
 
         // Esegui la richiesta POST utilizzando Axios
-        axios.post('http://mailer.future-plus.it/api/mail/createMail', dati, {
+        axios.post('https://mailer.future-plus.it/api/mail/createMail', dati, {
             method: 'POST',    
             headers: {
                 'Content-Type': 'application/json',
