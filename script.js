@@ -103,67 +103,168 @@ eleNotion4.addEventListener('click', notionCollaps4)
 eleNotion5.addEventListener('click', notionCollaps5)
 
 
-// Get form values
-const email = document.getElementById('email');
-const name = document.getElementById('name');
-const telephone = document.getElementById('telephone');
-const contact = document.getElementsByName('contact');
-const sendMail = document.getElementById('tc');
-
-const submit = document.getElementById('submit');
 
 
-submit.addEventListener('click', function() {
-    inviaRichiesta(sendMail, email, name, telephone, contact);
-});
 
-function inviaRichiesta(sendMail, email, name, telephone, contact) {
 
-    if(sendMail.checked){
+let elename = document.querySelector('#name')
+let elephone = document.querySelector('#phone')
+let eleemail = document.querySelector('#email')
+let elemethod = document.querySelector('#method')
+let eletc = document.querySelector('#tc')
+let error = document.querySelector('.error')
+let elesubmit = document.querySelector('#submit')
 
-        //Test - Dati da inviare al backend
-        const dati = {
-            email: email.value,
-            name: name.value,
-            telephone: telephone.value,
-            contact: contact[0].checked ? contact[0].value : contact[1].value,
-            sendMail:sendMail.checked ? true : false
+let elename2 = document.querySelector('#name2')
+let elephone2 = document.querySelector('#phone2')
+let eleemail2 = document.querySelector('#email2')
+let elemessage = document.querySelector('#message')
+let elemethod2 = document.querySelector('#method2')
+let eletc2 = document.querySelector('#tc2')
+let error2 = document.querySelector('.error2')
+let elesubmit2 = document.querySelector('#submit2')
+
+let elebannerSuccess = document.querySelector('#bannerSuccess')
+let elebannerDanger = document.querySelector('#bannerDanger')
+let eleclose = document.querySelector('#closemail')
+
+
+function sendFirstMail(){
+
+    error.innerHTML = ' '
+    let valid = true;
+    let errors = [];
+    if(!elename.value){
+        valid = false
+        errors.push('Inserisci il nome')
+    }
+    if(!elephone.value){
+        valid = false
+        errors.push('Inserisci il Numero di telefono')
+    }
+    if(!eleemail.value){
+        valid = false
+        errors.push('Inserisci una Email valida')
+    }
+    if(!elemethod.value){
+        valid = false
+        errors.push('Scegli come essere contattato')
+    }
+    if(!eletc.checked){
+        valid = false
+        errors.push('Accetta termini condizioni')
+    }
+
+    if(!valid){
+        errors.forEach(element => {
+            error.innerHTML+=`<li>${element}</li>`
             
-            // Aggiungi altre chiavi e valori secondo necessitÃ 
-        };
+        });
+    }else{
+        
+        let dati = {
+            'name' : elename.value,
+            'phone' : elephone.value,
+            'email' : eleemail.value,
+            'method' : elemethod.value,
+            'tc' : eletc.value,
+        }
 
-        // Esegui la richiesta POST utilizzando Axios
-        axios.post('https://mailer.future-plus.it/api/mail/createMail', dati, {
+        axios.post('http://127.0.0.1:8001/api/contacts/mailFirst', dati, {
             method: 'POST',    
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json',
-                'X-Frontend': 'didatticaallaperto',
-            },
-            body: JSON.stringify(dati)
+
+            body: dati
             
         })
         .then(response => {
             console.log(response.data);
-       
-        })
-        .catch(error => {
-            console.error('Errore Axios:', error);
-            console.error(error.response ? error.response.data.error : 'Errore sconosciuto'); 
-            
-            if (error.response && error.response.data.details) {
-              console.error('Dettagli dell\'errore:', error.response.data.details);
+            let success = response.data.success
+            if(success == true){
+                elebannerSuccess.classList.add('bannerOn')
+                elename.value = ''
+                elephone.value = ''
+                eleemail.value = ''
+                elemethod.value = ''
+                eletc.value = ''
+            }else{
+                elebannerDanger.classList.add('bannerOn')
             }
-            // Restituisci un messaggio di errore
-            return response('Errore interno del server', 500);
-        });
-
-    }else{
-       console.log('errore: devi spuntare la checkbox');
+        
+        })
     }
-    email.value= ' ' 
-    name.value= ' ' 
-    telephone.value= ' ' 
- 
-
 }
+function sendFirstMail2(){
+    error2.innerHTML = ' '
+    let valid = true;
+    let errors = [];
+    if(!elename2.value){
+        valid = false
+        errors.push('Inserisci il nome')
+    }
+    if(!elephone2.value){
+        valid = false
+        errors.push('Inserisci il Numero di telefono')
+    }
+    if(!eleemail2.value){
+        valid = false
+        errors.push('Inserisci una Email valida')
+    }
+    if(!elemethod2.value){
+        valid = false
+        errors.push('Scegli come essere contattato')
+    }
+    if(!eletc2.checked){
+        valid = false
+        errors.push('Accetta termini condizioni')
+    }
+
+    if(!valid){
+        errors.forEach(element => {
+            error2.innerHTML+=`<li>${element}</li>`
+            
+        });
+    }else{
+        
+        let dati = {
+            'name' : elename2.value,
+            'phone' : elephone2.value,
+            'email' : eleemail2.value,
+            'method' : elemethod2.value,
+            'message' : elemessage.value,
+            'tc' : eletc2.value,
+        }
+        console.log(dati)
+
+        axios.post('http://127.0.0.1:8001/api/contacts/mailFirst', dati, {
+            method: 'POST',    
+
+            body: dati
+            
+        })
+        .then(response => {
+            console.log(response.data);
+            let success = response.data.success
+            if(success == true){
+                elebannerSuccess.classList.add('bannerOn')
+                elename2.value = ''
+                elephone2.value = ''
+                eleemail2.value = ''
+                elemethod2.value = ''
+                elemessage.value = ''
+                eletc2.value = ''
+            }else{
+                elebannerDanger.classList.add('bannerOn')
+            }
+        
+        })
+    } 
+}
+    
+
+
+elesubmit.addEventListener('click', sendFirstMail);
+elesubmit2.addEventListener('click', sendFirstMail2);
+eleclose.addEventListener('click', function(){
+    elebannerDanger.classList.remove('bannerOn')
+    elebannerSuccess.classList.remove('bannerOn')
+});

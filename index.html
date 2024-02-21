@@ -202,7 +202,9 @@
             <div class="soluzioni-su-misura panddinger">
                 <h2>offriamo soluzioni <br> su misura</h2>
 
-                <p>Ogni scuola merita di essere unica ed originale. Progettare intere aree didattiche è il nostro lavoro da più di vent'anni, fornendo soluzioni perfette per ogni esigenza. <br> Hai un'idea da realizzare? Parliamone!</p>
+                <p>
+                    Ogni scuola merita di essere unica ed originale. Progettare intere aree didattiche è il nostro lavoro da più di vent'anni, fornendo soluzioni perfette per ogni esigenza. <br> Hai un'idea da realizzare? Parliamone!
+                </p>
                 <div class="form">
                     <div class="inputs">
 
@@ -211,7 +213,7 @@
                             <label class="user-label">Nome e cognome</label>
                         </div>
                         <div class="input-group">
-                            <input id="telephone" required="" type="text" name="text" autocomplete="off" class="input">
+                            <input id="phone" required="" type="text" name="text" autocomplete="off" class="input">
                             <label class="user-label">Telefono</label>
                         </div>
                         <div class="input-group">
@@ -226,25 +228,36 @@
                         <span>Come preferisci essere contattato?</span> 
                         <div class="sub-contact">
                             <div>
-                                <input type="radio" value="mail" name="contact" id="contact">
-                                <label style="background-color: #ffffff00 !important; " for="name">email</label>
+                                <input type="radio" value="m" name="method" id="method">
+                                <label style="background-color: #ffffff00 !important; " for="method">email</label>
 
                             </div>
                             <div>
 
-                                <input type="radio" value="telefono" name="contact" id="contact">
-                                <label style="background-color: #ffffff00 !important; " for="tel">telefono</label>
+                                <input type="radio" value="t" name="method" id="method">
+                                <label style="background-color: #ffffff00 !important; " for="method">telefono</label>
                             </div>
     
                         </div>
                     </div>
                     <div class="trattamenti">
-                        <input type="checkbox" name="trat" id="tc">
-                        <label style="background-color: #ffffff00 !important; font-size: 11px !important;" for="trat">Ho letto e accetto la politica sulla privacy ai sensi del Regolamento EU n. 679/2016</label>
+                        <input type="checkbox" name="tc" id="tc">
+                        <label style="background-color: #ffffff00 !important; font-size: 11px !important;" for="tc">Ho letto e accetto la politica sulla privacy ai sensi del Regolamento EU n. 679/2016</label>
                     </div>
+                    <ul class="error"></ul>
                     <div class="btn" id="submit">Invia</div>
                 </div>
             </div>
+
+            <div class="banner" id="bannerSuccess">
+                La sua mail è stata inoltrata correttamente!
+                <div id="closemail">x</div>
+            </div>
+            <div class="banner" id="bannerDanger">
+                C'è stato un errore prova una mail esistente
+                <div id="closemail">x</div>
+            </div>
+            
 
             <div class="contattaci panddinger">
                 <h2>contattaci</h2>
@@ -254,15 +267,15 @@
     
                         <div class="form">
                             <div class="input-group">
-                                <input required="" type="text" name="text" autocomplete="off" class="input">
+                                <input id="name2" required="" type="text" name="text" autocomplete="off" class="input">
                                 <label class="user-label">Nome e cognome</label>
                             </div>
                             <div class="input-group">
-                                <input required="" type="text" name="text" autocomplete="off" class="input">
+                                <input id="phone2" required="" type="text" name="text" autocomplete="off" class="input">
                                 <label class="user-label">Telefono</label>
                             </div>
                             <div class="input-group">
-                                <input required="" type="text" name="text" autocomplete="off" class="input">
+                                <input id="email2" required="" type="text" name="text" autocomplete="off" class="input">
                                 <label class="user-label">Email</label>
                             </div>
                             
@@ -270,23 +283,23 @@
                                 <span>Come preferisci essere contattato?</span> 
                                 <div class="sub-contact">
                                     
-                                    <input type="radio" name="contact" id="cmail">
-                                    <label for="cemail">email</label>
+                                    <input id="method2" type="radio" value="m" name="contact1" >
+                                    <label for="method2">email</label>
                                     
-                                    <input type="radio" name="contact" id="ctel">
-                                    <label for="ctel">telefono</label>
+                                    <input id="method2" type="radio" value="t" name="contact1" >
+                                    <label for="method2">telefono</label>
                                 </div>
                             </div>
                             <div class="trattamenti">
-                                <input type="checkbox" name="trat" id="trat">
+                                <input type="checkbox" name="trat" id="tc2">
                                 <span style="font-size: 11px !important;" >Ho letto e accetto la politica sulla privacy ai sensi del Regolamento EU n. 679/2016</span>
                             </div>
                             <div class="input-group">
-                                <textarea  name="message" autocomplete="off" class="input" cols="30" rows="10"></textarea>
-                                <label class="user-label">Messaggio</label>
+                                <h5 class="h5">Lasciaci un messaggio</h5>
+                                <textarea id="message" name="message" autocomplete="off" class="input" cols="30" rows="10"></textarea>
                             </div>
-    
-                            <div class="btn send">INVIA</div>
+                            <ul class="error2"></ul>
+                            <div id="submit2" class="btn send">INVIA</div>
                         </div>
                     </div>
                     <div class="left">

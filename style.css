@@ -560,6 +560,7 @@ p.p-special{
     border-radius: 100%;
     border: 3px solid white;
     background-color: rgba(128, 128, 128, 0.62);
+    font-size: 18px;
 }
 .showroom .sec .circle .desc{
     position: absolute;
@@ -575,15 +576,18 @@ p.p-special{
     background-color: rgba(128, 128, 128, 0.62);
     opacity: 0;
     transition: all .2s ease-in-out;
+
 }
 
 .showroom .sec .circle .desc a{
     text-decoration: none;
-    padding: 10px 20px;
+    padding: 5px 15px;
     background-color: white;
     border-radius: 300px;
     color: rgb(51, 51, 51);
     text-align: center;
+    font-size: 17px !important;
+    white-space: nowrap;
 
 }
 .btn-1{
@@ -620,7 +624,7 @@ p.p-special{
     flex-direction: column;
     align-items: center;
     gap: 2rem;
-    margin:  200px 0;
+    margin:  90px 0;
 }
 .soluzioni-su-misura h2{
     text-align: left;
@@ -833,6 +837,46 @@ h4{
     font-size: clamp( 1.3rem, 2.6vh, 1.9rem);
     font-family: Staatliches !important;
 }
+
+.error li{
+    color: rgb(201, 116, 116);
+    padding: 10px;
+}
+/********banner*********/
+#bannerSuccess{
+    background-color: #32d93dc3;
+
+}
+#bannerDanger{
+    background-color: #d93232c3;
+}
+#bannerDanger,
+#bannerSuccess{
+   
+}
+.banner{
+    display: none;
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    right: 30px;
+
+    height: 40px;
+    padding: 10px;
+    border-radius: 10px;
+}
+.bannerOn{
+    display: block !important;
+}
+#closemail{
+    position: fixed;
+    top: 32px;
+    right: 35px;
+    padding: 5px 10px;
+    background-color: rgba(0, 0, 0, 0.843);
+    border-radius: 5px;
+    text-align: center;
+}
 /********inputi/uiverse/btn*********/
 
 .input-group {
@@ -910,6 +954,9 @@ h4{
         height: 550px !important;
     }
 
+}
+h5.h5{
+    margin-bottom: 5px !important; 
 }
 main::-webkit-scrollbar{
       
