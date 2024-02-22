@@ -167,6 +167,7 @@ function sendFirstMail(){
             'phone' : elephone.value,
             'email' : eleemail.value,
             'method' : elemethod.value,
+            'message' : 'none',
             'tc' : eletc.value,
         }
 
