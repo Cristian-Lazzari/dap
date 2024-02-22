@@ -170,7 +170,7 @@ function sendFirstMail(){
             'tc' : eletc.value,
         }
 
-        axios.post('http://127.0.0.1:8001/api/contacts/mailFirst', dati, {
+        axios.post('https://dashboard-ce.future-plus.it/api/contacts/mailFirst', dati, {
             method: 'POST',    
 
             body: dati
@@ -235,7 +235,7 @@ function sendFirstMail2(){
         }
         console.log(dati)
 
-        axios.post('http://127.0.0.1:8001/api/contacts/mailFirst', dati, {
+        axios.post('https://dashboard-ce.future-plus.it/api/contacts/mailFirst', dati, {
             method: 'POST',    
 
             body: dati
